@@ -214,6 +214,9 @@ top_country <- netflixdf %>%
   arrange(desc(nCount)) %>% 
   top_n(20)
 
+#setting missing column as NA
+top_country[3,] <- NA
+top_country <- na.omit(top_country)
 
 top_country
 
@@ -231,11 +234,10 @@ So most of the shows are produced by following countries:
 
 ```{r  message=FALSE,warning=FALSE}
 
-top_country[3,] <- NA
-top_country <- na.omit(top_country)
+#now lets filter top countries and the top genres
 
 country_df <- netflixdf %>% 
-  filter(listed_in %in% Genre_df$listed_in) %>% 
+  filter(listed_in %in% Genre_df$listed_in  & country %in% top_country$country) %>% 
   select(listed_in,country) %>% 
   group_by(listed_in, country) %>% 
   mutate(nCount = n())
