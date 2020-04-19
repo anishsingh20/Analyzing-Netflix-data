@@ -246,6 +246,62 @@ country_df <- netflixdf %>%
 ```
 
 
+#### 1)Types of shows in US 
+
+
+
+```{r message=FALSE,warning=FALSE}
+
+US_shows <- country_df  %>% 
+  filter(country=="United States") %>% 
+  group_by(listed_in) %>% 
+  summarise(nCount = n()) %>% 
+  arrange(desc(nCount))
+
+
+India_shows <- country_df  %>% 
+  filter(country=="India") %>% 
+  group_by(listed_in) %>% 
+  summarise(nCount = n()) %>% 
+  arrange(desc(nCount))
+
+
+
+UK_shows <- country_df  %>% 
+  filter(country=="United Kingdom") %>% 
+  group_by(listed_in) %>% 
+  summarise(nCount = n()) %>% 
+  arrange(desc(nCount))
+  
+
+Japan_shows <- country_df  %>% 
+  filter(country=="Japan") %>% 
+  group_by(listed_in) %>% 
+  summarise(nCount = n()) %>% 
+  arrange(desc(nCount))
+
+
+Canada_shows <- country_df  %>% 
+  filter(country=="Canada") %>% 
+  group_by(listed_in) %>% 
+  summarise(nCount = n()) %>% 
+  arrange(desc(nCount))
+  
+  
+SK_shows <- country_df  %>% 
+  filter(country=="South Korea") %>% 
+  group_by(listed_in) %>% 
+  summarise(nCount = n()) %>% 
+  arrange(desc(nCount))
+  
+
+
+
+
+```
+
+
+
 
 
 
