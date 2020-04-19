@@ -199,12 +199,46 @@ We can actually notice the popularity and demand of __stand-up comedy__ shows gr
 
 
 
-### Let's check the relation between Country and the Genre
+### Let's check the relation between Country and the Top Genres
 
+
+Here we will try to find which country produces which kinds of shows. First let's check which Country produces the most shows for Netflix.
 
 ```{r, message=FALSE,warning=FALSE}
 
 
+top_country <- netflixdf %>% 
+  select(country) %>% 
+  group_by(country) %>% 
+  summarise(nCount = n()) %>% 
+  arrange(desc(nCount)) %>% 
+  top_n(20)
+
+
+top_country
+
+```
+
+So most of the shows are produced by following countries:
+1) US
+2) India
+3) UK
+4) Japan
+5) Canada
+6) South Korea
+
+
+
+```{r  message=FALSE,warning=FALSE}
+
+top_country[3,] <- NA
+top_country <- na.omit(top_country)
+
+country_df <- netflixdf %>% 
+  filter(listed_in %in% Genre_df$listed_in) %>% 
+  select(listed_in,country) %>% 
+  group_by(listed_in, country) %>% 
+  mutate(nCount = n())
 
 
 ```
