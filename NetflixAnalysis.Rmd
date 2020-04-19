@@ -118,35 +118,59 @@ year_2015 <- year_genref %>%
   group_by(listed_in) %>% 
   summarise(nCount= n()) %>% 
   arrange(desc(nCount))
+```
 
+
+### Let's plot the above data for last 5 years.
+
+
+#### For year 2019
+
+```{r}
 
   hchart(year_2019,hcaes(x=listed_in,y=nCount),type="column",color="blue",name="Count") %>% 
   hc_exporting(enabled = TRUE) %>%
-  hc_title(text="Top Genres of shows produced in Year 2019 ",align="center") %>%
+  hc_title(text="Top Genres of shows produced in Year 2019",align="center") %>%
   hc_add_theme(hc_theme_elementary()) 
   
+```  
   
+  
+  
+```{r message=FALSE,warning=FALSE}
+
   hchart(year_2018,hcaes(x=listed_in,y=nCount),type="column",color="green",name="Count") %>% 
   hc_exporting(enabled = TRUE) %>%
   hc_title(text="Top Genres of shows produced in Year 2018 ",align="center") %>%
   hc_add_theme(hc_theme_elementary()) 
   
   
+```
+
+
+```{r message=FALSE,warning=FALSE}
   hchart(year_2017,hcaes(x=listed_in,y=nCount),type="column",color="orange",name="Count") %>% 
   hc_exporting(enabled = TRUE) %>%
   hc_title(text="Top Genres of shows produced in Year 2017 ",align="center") %>%
   hc_add_theme(hc_theme_elementary()) 
-  
+ 
+```
+
+```{r message=FALSE,warning=FALSE}
   hchart(year_2016,hcaes(x=listed_in,y=nCount),type="column",color="purple",name="Count") %>% 
   hc_exporting(enabled = TRUE) %>%
   hc_title(text="Top Genres of shows produced in Year 2016 ",align="center") %>%
   hc_add_theme(hc_theme_elementary()) 
-  
+```
+
+
+
+```{r message=FALSE,warning=FALSE}
   hchart(year_2015,hcaes(x=listed_in,y=nCount),type="column",color="red",name="Count") %>% 
   hc_exporting(enabled = TRUE) %>%
   hc_title(text="Top Genres of shows produced in Year 2015 ",align="center") %>%
   hc_add_theme(hc_theme_elementary()) 
   
-
-
 ```
+
+
