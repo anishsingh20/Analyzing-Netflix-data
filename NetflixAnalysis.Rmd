@@ -19,6 +19,9 @@ output: html_notebook
 #reading the data
 netflixdf <- read.csv("netflix_titles.csv")
 attach(netflixdf)
+
+require(dplyr)
+require(highcharter)
 #let's see the distribution on type of shows on Netflix:
 table(type)
 
@@ -30,12 +33,29 @@ summary(netflixdf)
 
 
 
-### Let's start with the Genres on Netflix
+### Let's start with analyzing  the Genres on Netflix
 
 How the Genre of shows on Neflix relates to the other interesting variables in the dataset like country of origin, year released, type and ratings.
 
 ```{r message=FALSE,warning=FALSE}
 
+#let's check top Genre of shows in netflix:
+
+Genre_df <- netflixdf %>%
+  group_by(listed_in) %>% 
+  summarise(Count = n()) %>% 
+  arrange(desc(Count)) %>% 
+  top_n(30)
+   
+
+#let's plot the most produced  genres:
+
+hchart(Genre_df,hcaes(x=listed_in,y=Count),type="column",color="#062D67",name="Count") %>% 
+  hc_exporting(enabled = TRUE) %>%
+  hc_title(text="Barplot of top 30 genres produced on Netflix",align="center") %>%
+  hc_add_theme(hc_theme_elementary()) 
+
 
 
 ```
+Shockingly there are most __"documentaries"__ on Netflix followe by __"Stand up Comedy"__ shows.
