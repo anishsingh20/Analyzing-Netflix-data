@@ -246,7 +246,7 @@ country_df <- netflixdf %>%
 ```
 
 
-#### 1)Types of shows in US 
+
 
 
 
@@ -296,10 +296,90 @@ SK_shows <- country_df  %>%
   
 
 
+```
+
+
+### Let's plot the data for all top countries
+
+
+
+
+
+#### 1)Types of shows in US 
+
+```{r echo=FALSE,warning=FALSE,message=FALSE}
+
+hchart(US_shows,hcaes(x=listed_in,y=nCount),type="column",color="#FF6666",name="Count") %>% 
+  hc_exporting(enabled = TRUE) %>%
+  hc_title(text="Top Genres of shows produced in US ",align="center") %>%
+  hc_add_theme(hc_theme_elementary()) 
+
+```
+
+
+
+#### 2)Types of shows in India 
+
+```{r echo=FALSE,warning=FALSE,message=FALSE}
+hchart(India_shows,hcaes(x=listed_in,y=nCount),type="column",color="#6666FF",name="Count") %>% 
+  hc_exporting(enabled = TRUE) %>%
+  hc_title(text="Top Genres of shows produced in India ",align="center") %>%
+  hc_add_theme(hc_theme_elementary()) 
+
+```
+
+
+
+#### 3)Types of shows in UK
+
+```{r echo=FALSE,warning=FALSE,message=FALSE}
+
+hchart(UK_shows,hcaes(x=listed_in,y=nCount),type="column",color="#FF66FF",name="Count") %>% 
+  hc_exporting(enabled = TRUE) %>%
+  hc_title(text="Top Genres of shows produced in UK ",align="center") %>%
+  hc_add_theme(hc_theme_elementary()) 
+
+```
+
+
+
+#### 4)Types of shows Canada
+
+```{r echo=FALSE,warning=FALSE,message=FALSE}
+
+hchart(US_shows,hcaes(x=listed_in,y=nCount),type="column",color="#404040",name="Count") %>% 
+  hc_exporting(enabled = TRUE) %>%
+  hc_title(text="Top Genres of shows produced in Canada",align="center") %>%
+  hc_add_theme(hc_theme_elementary()) 
+
+```
+
+
+
+#### 5)Types of shows in Japan
+
+```{r echo=FALSE,warning=FALSE,message=FALSE}
+
+
+hchart(Japan_shows,hcaes(x=listed_in,y=nCount),type="column",color="#CCE5FF",name="Count") %>% 
+  hc_exporting(enabled = TRUE) %>%
+  hc_title(text="Top Genres of shows produced in Japan ",align="center") %>%
+  hc_add_theme(hc_theme_elementary()) 
 
 
 ```
 
+
+#### 6)Types of shows in South Korea 
+
+```{r echo=FALSE,warning=FALSE,message=FALSE}
+
+hchart(SK_shows,hcaes(x=listed_in,y=nCount),type="column",color="#FFFF99",name="Count") %>% 
+  hc_exporting(enabled = TRUE) %>%
+  hc_title(text="Top Genres of shows produced in South Korea ",align="center") %>%
+  hc_add_theme(hc_theme_elementary()) 
+
+```
 
 
 
