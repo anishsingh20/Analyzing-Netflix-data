@@ -4,4 +4,7 @@ output: html_notebook
 ---
 
 
+#reading the data
+netflixdf <- read.csv("netflix_titles.csv")
+
 
