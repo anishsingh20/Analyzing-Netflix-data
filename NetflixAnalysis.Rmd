@@ -22,8 +22,20 @@ attach(netflixdf)
 #let's see the distribution on type of shows on Netflix:
 table(type)
 
-table(listed_in)
+#let's check summary statistics of the dataset
+summary(netflixdf)
 
-table(rating)
+```
+
+
+
+
+### Let's start with the Genres on Netflix
+
+How the Genre of shows on Neflix relates to the other interesting variables in the dataset like country of origin, year released, type and ratings.
+
+```{r message=FALSE,warning=FALSE}
+
+
 
 ```
