@@ -195,3 +195,23 @@ In 2019, most of the shows produced and released on Netflix were __Stand-Up come
 
 We can actually notice the popularity and demand of __stand-up comedy__ shows growing in the past 5 years in the above plots.
 
+
+
+
+
+### Let's check the relation between Country and the Genre
+
+
+```{r, message=FALSE,warning=FALSE}
+
+
+
+
+```
+
+
+
+
+
+
+
