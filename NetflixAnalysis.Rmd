@@ -3,8 +3,27 @@ title: "Analyzing Netflix data"
 output: html_notebook
 ---
 
+## Some of the interesting questions (tasks) which can be performed on this dataset -
+
+- Understanding what content is available in different countries
+- Identifying similar content by matching text-based features
+- Network analysis of Actors / Directors and find interesting insights
+- Is Netflix has increasingly focusing on TV rather than movies in recent years.
+- What types of genres are more in demand over the years
+
+
+### Lets Read the data and have a look at some basic things:
+
+```{r message=FALSE,warning=FALSE}
 
 #reading the data
 netflixdf <- read.csv("netflix_titles.csv")
+attach(netflixdf)
+#let's see the distribution on type of shows on Netflix:
+table(type)
 
+table(listed_in)
 
+table(rating)
+
+```
