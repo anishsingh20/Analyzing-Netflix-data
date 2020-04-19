@@ -1,7 +1,9 @@
 ---
 title: "Analyzing Netflix data"
 author: "Anish Singh Walia"
-output: html_notebook
+output:
+  html_document:
+    df_print: paged
 ---
 
 
@@ -118,6 +120,7 @@ year_2015 <- year_genref %>%
   group_by(listed_in) %>% 
   summarise(nCount= n()) %>% 
   arrange(desc(nCount))
+
 ```
 
 
@@ -126,7 +129,7 @@ year_2015 <- year_genref %>%
 
 #### For year 2019
 
-```{r}
+```{r ,message=FALSE,warning=FALSE,echo=FALSE}
 
   hchart(year_2019,hcaes(x=listed_in,y=nCount),type="column",color="blue",name="Count") %>% 
   hc_exporting(enabled = TRUE) %>%
@@ -135,9 +138,11 @@ year_2015 <- year_genref %>%
   
 ```  
   
+In 2019, most of the shows produced and released on Netflix were __Stand-Up comedy__ shows followed by __Documentaries__.  
   
+#### For year 2018
   
-```{r message=FALSE,warning=FALSE}
+```{r ,echo=FALSE,message=FALSE,warning=FALSE}
 
   hchart(year_2018,hcaes(x=listed_in,y=nCount),type="column",color="green",name="Count") %>% 
   hc_exporting(enabled = TRUE) %>%
@@ -148,7 +153,12 @@ year_2015 <- year_genref %>%
 ```
 
 
-```{r message=FALSE,warning=FALSE}
+
+
+#### For year 2017
+
+```{r ,echo=FALSE,message=FALSE,warning=FALSE}
+
   hchart(year_2017,hcaes(x=listed_in,y=nCount),type="column",color="orange",name="Count") %>% 
   hc_exporting(enabled = TRUE) %>%
   hc_title(text="Top Genres of shows produced in Year 2017 ",align="center") %>%
@@ -156,16 +166,26 @@ year_2015 <- year_genref %>%
  
 ```
 
-```{r message=FALSE,warning=FALSE}
+
+
+
+#### For year 2016
+
+```{r ,echo=FALSE,message=FALSE,warning=FALSE}
+
   hchart(year_2016,hcaes(x=listed_in,y=nCount),type="column",color="purple",name="Count") %>% 
   hc_exporting(enabled = TRUE) %>%
   hc_title(text="Top Genres of shows produced in Year 2016 ",align="center") %>%
   hc_add_theme(hc_theme_elementary()) 
+
+
 ```
 
 
+#### For year 2015
 
-```{r message=FALSE,warning=FALSE}
+```{r ,echo=FALSE,message=FALSE,warning=FALSE}
+
   hchart(year_2015,hcaes(x=listed_in,y=nCount),type="column",color="red",name="Count") %>% 
   hc_exporting(enabled = TRUE) %>%
   hc_title(text="Top Genres of shows produced in Year 2015 ",align="center") %>%
@@ -173,4 +193,5 @@ year_2015 <- year_genref %>%
   
 ```
 
+We can actually notice the popularity and demand of __stand-up comedy__ shows growing in the past 5 years in the above plots.
 
