@@ -384,6 +384,17 @@ hchart(SK_shows,hcaes(x=listed_in,y=nCount),type="column",color="#FFFF99",name="
 
 
 
+------------------------
+
+
+
+### Genre and Type of Show
+
+
+Let's check which genres are which types of shows(Movies/TV Series).
+
+
+
 
 
 
